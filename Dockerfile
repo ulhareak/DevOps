@@ -1,0 +1,9 @@
+FROM mysql:latest
+#ENV MYSQL_ROOT_PASSWORD 2971
+
+ENV MYSQL_ALLOW_EMPTY_PASSWORD TRUE 
+ENV MYSQL_DATABASE pucsdStudents
+ENV MYSQL_USER pucsd
+ENV MYSQL_PASSWORD pucsd
+ADD test.sql /docker-entrypoint-initdb.d
+EXPOSE 3306
